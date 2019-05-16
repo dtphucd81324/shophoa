@@ -1,0 +1,28 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Danh Sách Nhà Cung Cấp
+{% endblock %}
+
+{% block headline %}
+Danh Sách Nhà Cung Cấp
+{% endblock %}
+
+{% block content %}
+<form name="frmnhacungcap" id="frmnhacungcap" method="POST" action="/shop/backend/nhacungcap/create.php">
+    <div class="form-group">
+        <label for="ncc_ma">Mã nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_ma" id="ncc_ma" placeholder="Mã nhà cung cấp"  readonly/>
+        <small id="ncc_maHelp" class="form-text text-muted">Mã nhà cung cấp không thể hiệu chỉnh.</small>
+    </div>
+    <div class="form-group">
+        <label for="ncc_ten">Tên nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_ten" id="ncc_ten" placeholder="Tên nhà cung cấp" />
+    </div>
+    <div class="form-group">
+        <label for="ncc_mota">Mô tả nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_mota" id="ncc_mota" placeholder="Mô tả nhà cung cấp" />
+    </div>
+    <button class="btn btn-primary" name="btnThem">Thêm mới</button> 
+</form>
+{% endblock %}

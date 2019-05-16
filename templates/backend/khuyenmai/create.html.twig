@@ -1,0 +1,36 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Sửa Khuyến Mãi
+{% endblock %}
+
+{% block headline %}
+Sửa Khuyến Mãi
+{% endblock %}
+
+{% block content %}
+<form name="frmkhuyenmai" id="frmkhuyenmai" method="POST" action="/shop/backend/khuyenmai/create.php">
+    <div class="form-group">
+        <label for="km_ma">Mã khuyến mãi</label>
+        <input type="text" name="km_ma" id="km_ma" class="form-control" placeholder="Mã khuyến mãi" readonly />
+        <small id="km_maHelp">Mã khuyến mãi không được hiệu chỉnh.</small>
+    </div>
+    <div class="form-group">
+        <label for="km_ten">Tên khuyến mãi</label>
+        <input type="text" name="km_ten" id="km_ten" class="form-control" placeholder="Tên khuyến mãi" />
+    </div>
+    <div class="form-group">
+        <label for="km_noidung">Nội dung khuyến mãi</label>
+        <input type="text" name="km_noidung" id="km_noidung" class="form-control" placeholder="Nội dung khuyến mãi" />
+    </div>
+    <div class="form-group">
+        <label for="km_tungay">Từ ngày</label>
+        <input type="text" name="km_tungay" id="km_tungay" class="form-control" placeholder="Nội dung khuyến mãi" />
+    </div>
+    <div class="form-group">
+        <label for="km_denngay">Đến ngày</label>
+        <input type="text" name="km_denngay" id="km_denngay" class="form-control" placeholder="Nội dung khuyến mãi" />
+    </div>
+    <button class="btn btn-primary" name="btnThem" id="btnThem">Thêm mới</button>
+</form>
+{% endblock %}

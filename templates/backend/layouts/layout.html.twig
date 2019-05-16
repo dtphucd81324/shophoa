@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-100">
+    <head>
+       <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/shop/assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
+
+    <!-- Custom css - Các file css do chúng ta tự viết -->
+    <link rel="stylesheet" href="/shop/assets/backend/css/style.css" type="text/css" />
+
+    <!-- Block title - Đục lỗ trên giao diện bố cục chung, đặt tên là `title` -->
+    <title>Thiên Đường Hoa - Nơi tôn lên vẻ đẹp | 
+        {% block title %}
+        {% endblock %}
+    </title>
+    <!-- End block title -->
+    </head>
+
+<body class="d-flex flex-column h-100"> 
+    <!--header-->
+    {{ include('backend/layouts/includes/header.html.twig')}}
+    <!--endheader-->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- sidebar -->
+            {{ include('backend/layouts/includes/sidebar.html.twig') }}
+            <!-- end sidebar -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                      <!-- Block headline - Đục lỗ trên giao diện bố cục chung, đặt tên là `headline` -->
+                      {% block headline %}
+                      {% endblock %}
+                      <!-- End block headline -->
+                </div>
+                <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
+                {% block content %}
+                <!-- <img src="/shop/images/logo.png" > -->
+                {% endblock %}
+                <!-- End block content -->
+            </main>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/shop/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/shop/assets/vendor/popperjs/popper.min.js"></script>
+    <script src="/shop/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/shop/assets/vendor/feather/feather.min.js"></script>
+
+    <!-- Custom script - Các file js do mình tự viết -->
+    <script src="/shop/assets/backend/js/app.js"></script>
+    <!-- footer -->
+    {{ include('backend/layouts/includes/footer.html.twig') }}
+    <!-- end footer -->
+</body>
+</html>

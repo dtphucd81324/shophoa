@@ -1,0 +1,46 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Danh Sách Khuyến Mãi
+{% endblock %}
+
+{% block headline %}
+Danh Sách Khuyến Mãi
+{% endblock %}
+
+{% block content %}
+<a href="create.php" class="btn btn-primary">
+    <span data-feather="plus"></span>Thêm mới
+</a>
+<table class="table table-bordered table-hover mt-2">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã khuyến mãi</th>
+            <th>Tên khuyến mãi</th>
+            <th>Nội dung khuyến mãi</th>
+            <th>Từ ngày</th>
+            <th>Đến ngày</th>
+            <th>Dịch vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for khuyenmai in ds_khuyenmai %}
+            <tr>
+                <td>{{ khuyenmai.km_ma }}</td>    
+                <td>{{ khuyenmai.km_ten }}</td>    
+                <td>{{ khuyenmai.km_noidung }}</td>    
+                <td>{{ khuyenmai.km_tungay }}</td>    
+                <td>{{ khuyenmai.km_denngay }}</td>    
+                <td>
+                    <a href="edit.php?km_ma={{ khuyenmai.km_ma }}" class="btn btn-warning">
+                        <span data-feather="edit"></span>Sửa
+                    </a>
+                    <a href="delete.php?km_ma={{ khuyenmai.km_ma }}" class="btn btn-danger">
+                        <span data-feather="delete"></span>Xóa
+                    </a>
+                </td>    
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

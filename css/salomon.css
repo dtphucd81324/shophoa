@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Chi tiet san pham*/
+.Gia {
+	color: #F00;
+	font-weight:  bold;
+}
+
+.GiaCu {
+	color: #990000;
+	text-decoration: line-through;
+	font-weight: bold;
+}
+
+

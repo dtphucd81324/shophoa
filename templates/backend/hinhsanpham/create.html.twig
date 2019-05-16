@@ -1,0 +1,27 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Thêm mới hình sản phẩm
+{% endblock %}
+
+{% block headline %}
+Thêm mới hình sản phẩm
+{% endblock %}
+
+{% block content %}
+<form name="frmhinhsanpham" id="frmhinhsanpham" method="POST" action="/shop/backend/hinhsanpham/create.php" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="sp_ma">Mã sản phẩm</label>
+        <select class="form-control" id="sp_ma" name="sp_ma">
+            {% for sanpham in ds_sanpham %}
+            <option value="{{ sanpham.sp_ma }}">{{ sanpham.sp_tomtat }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="hsp_tentaptin">Tập tin ảnh</label>
+        <input type="file" class="form-control" name="hsp_tentaptin" id="hsp_tentaptin" />
+    </div>
+    <button class="btn btn-primary" name="btnThem" id="btnThem">Thêm mới</button>
+</form>
+{% endblock %}

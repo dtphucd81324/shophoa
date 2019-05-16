@@ -1,0 +1,44 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Danh Sách Hình Sản Phẩm
+{% endblock %}
+
+{% block headline %}
+Danh Sách Hình Sản Phẩm
+{% endblock %}
+
+{% block content %}
+<a href="create.php" class="btn btn-primary">
+    <span data-feather="plus"></span>Thêm mới
+</a>
+<table class="table table-bordered table-hover mt-2">
+    <thead class="thead-dark">
+        <th>Mã hình Sản Phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Sản phẩm</th>
+        <th>Dịch vụ</th>
+    </thead>
+    <tbody>
+        {% for hinhsanpham in ds_hinhsanpham %}
+        <tr>
+            <td>{{ hinhsanpham.hsp_ma }}</td>
+            <td>
+                <img src="/shop/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" class="img-fluid" width="100px" />
+            </td>
+            <td>{{ hinhsanpham.sp_tomtat }}</td>
+            <td>
+                <!--Nút sửa-->
+                <a href="edit.php?hsp_ma={{ hinhsanpham.hsp_ma }}" class="btn btn-warning">
+                    <span data-feather="edit"></span>Sửa
+                </a>
+                <!--Nút xóa-->
+                <a href="delete.php?hsp_ma={{ hinhsanpham.hsp_ma }}" class="btn btn-danger">
+                    <span data-feather="delete"></span>Xóa
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

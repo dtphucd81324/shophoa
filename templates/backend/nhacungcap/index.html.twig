@@ -1,0 +1,42 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Danh sách Nhà cung cấp
+{% endblock %}
+
+{% block headline %}
+Danh sách Nhà cung cấp
+{% endblock %}
+
+{% block content %}
+<a href="create.php" class="btn btn-primary">
+    <span data-feather="plus"></span>Thêm mới
+</a>
+<table class="table table-bordered table-hover mt-2">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã nhà cung cấp</th>
+            <th>Tên nhà cung cấp</th>
+            <th>Mô tả</th>
+            <th>Dịch vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for nhacungcap in ds_nhacungcap %}
+        <tr>
+            <td>{{ nhacungcap.ncc_ma }}</td>
+            <td>{{ nhacungcap.ncc_ten }}</td>
+            <td>{{ nhacungcap.ncc_mota }}</td>
+            <td>
+                <a href="edit.php?ncc_ma={{ nhacungcap.ncc_ma }}" class="btn btn-warning">
+                    <span data-feather="edit"></span>Sửa
+                </a>
+                <a href="delete.php?ncc_ma={{ nhacungcap.ncc_ma }}" class="btn btn-danger">
+                    <span data-feather="delete"></span>Xóa
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

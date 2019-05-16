@@ -1,0 +1,57 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Danh sách Sản Phẩm
+{% endblock %}
+
+{% block headline %}
+Danh sách Sản Phẩm
+{% endblock %}
+
+{% block content %}
+<!--Nút thêm mới -->
+<a href="create.php" class="btn btn-primary">
+    <span data-feather="plus"></span>Thêm mới
+</a>
+<table class="table table-bordered table-hover mt-2">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Mô tả sản phẩm</th>
+            <th>Giá</th>
+            <th>Giá cũ</th>
+            <th>Ngày cập nhật</th>
+            <th>Số lượng</th>
+            <th>Loại sản phẩm</th>
+            <th>Nhà cung cấp</th>
+            <th>Khuyến mãi</th>
+            <th>Dịch vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sanpham in ds_sanpham %}
+        <tr>
+            <td>{{ sanpham.sp_ma }}</td>
+            <td>{{ sanpham.sp_ten }}</td>
+            <td>{{ sanpham.sp_mota }}</td>
+            <td>{{ sanpham.sp_gia }}</td>
+            <td>{{ sanpham.sp_giacu }}</td>
+            <td>{{ sanpham.sp_ngaycapnhat }}</td>
+            <td>{{ sanpham.sp_soluong }}</td>
+            <td>{{ sanpham.lsp_ten }}</td>
+            <td>{{ sanpham.ncc_ten }}</td>
+            <td>{{ sanpham.km_tomtat }}</td>
+            <td>
+                <a href="edit.php?sp_ma={{ sanpham.sp_ma }}" class="btn btn-warning">
+                    <span data-feather="edit"></span>Sửa
+                </a>
+                <a href="delete.php?sp_ma={{ sanpham.sp_ma }}" class="btn btn-danger">
+                    <span data-feather="delete"></span>Xóa
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

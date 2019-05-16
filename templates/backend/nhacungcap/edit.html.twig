@@ -1,0 +1,28 @@
+{% extends "backend/layouts/layout.html.twig" %}
+
+{% block title %}
+Sửa Nhà cung cấp
+{% endblock %}
+
+{% block headline %}
+Sửa Nhà cung cấp
+{% endblock %}
+
+{% block content %}
+<form name="frmnhacungcap" id="frmnhacungcap" method="POST" action="/shop/backend/nhacungcap/edit.php?ncc_ma={{ nhacungcap.ncc_ma }}">
+    <div class="form-group">
+        <label for="ncc_ma">Mã nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_ma" id="ncc_ma" placeholder="Mã nhà cung cấp"  readonly value="{{ nhacungcap.ncc_ma }}"/>
+        <small id="ncc_maHelp" class="form-text text-muted">Mã nhà cung cấp không thể hiệu chỉnh.</small>
+    </div>
+    <div class="form-group">
+        <label for="ncc_ten">Tên nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_ten" id="ncc_ten" placeholder="Tên nhà cung cấp" value="{{ nhacungcap.ncc_ten }}" />
+    </div>
+    <div class="form-group">
+        <label for="ncc_mota">Mô tả nhà cung cấp</label>
+        <input type="text" class="form-control" name="ncc_mota" id="ncc_mota" placeholder="Mô tả nhà cung cấp" value="{{ nhacungcap.ncc_mota }}" />
+    </div>
+    <button class="btn btn-primary" name="btnThem">Thêm mới</button> 
+</form>
+    {% endblock %}
